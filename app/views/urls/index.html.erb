@@ -1,0 +1,22 @@
+<h1>Shortened Urls</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Shortened Url</th>
+      <th scope="col">Original Url</th>
+      <th scope="col">Call Count</th>
+      <th scope="col">Latest Call Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @urls.each do |url| %>
+        <tr>
+            <th scope="row"><%= request.base_url + "/" + url.slug %></th>
+            <td><%= url.target %> </td>
+            <td><%= url.clicks || 0 %></td>
+            <td><%= url.updated_at.strftime('%F %T') %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

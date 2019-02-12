@@ -1,0 +1,7 @@
+
+
+<h1>Your Shortened URL</h1>
+
+<p><b>Original URL:</b> <%= @url.target %> </p>
+
+<p><b>Shortened URL:</b><a target="_blank" href=<%= @url.target %> > <%= request.base_url + "/" + @url.slug %> </a>
